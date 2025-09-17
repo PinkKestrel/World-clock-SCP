@@ -11,17 +11,18 @@
   <body>
     <div class="container">
       <h1>W🌍RLD CL🕗CK</h1>
-      <select name="city" id="city">
-        <option value="none">Select a city</option>
-        <option value="seville">Seville 🇪🇸</option>
-        <option value="kyoto">Kyoto 🇯🇵</option>
-        <option value="lima">Lima 🇵🇪</option>
-        <option value="lusaka">Lusaka 🇿🇲</option>
-      </select>
-
+      <div>
+        <select name="city" id="selectCity">
+          <option value="Europe/London">Select a city</option>
+          <option value="Europe/Madrid">Seville 🇪🇸</option>
+          <option value="Asia/Tokyo">Kyoto 🇯🇵</option>
+          <option value="America/Lima">Lima 🇵🇪</option>
+          <option value="Africa/Lusaka">Lusaka 🇿🇲</option>
+        </select>
+      </div>
       <div class="city">
         <div class="col-1">
-          <h2>Seville</h2>
+          <h2 id="city-one">Seville</h2>
           <br />
           <div class="date" id="date-city-one">September 9th 2025</div>
         </div>
@@ -29,7 +30,7 @@
       </div>
       <div class="city">
         <div class="col-1">
-          <h2>Lima</h2>
+          <h2 id="city-two">Lima</h2>
           <br />
           <div class="date" id="date-city-two">September 9th 2025</div>
         </div>
