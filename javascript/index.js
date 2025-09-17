@@ -12,8 +12,8 @@ function updateLocalTimezone() {
   const dateCityOne = document.getElementById("date-city-one");
   const timeCityOne = document.getElementById("time-city-one");
 
-  cityOne.innerHTML = guestLocalZone + " tz";
-  dateCityOne.innerHTML = moment().format("MMMM Do YYYY");
+  cityOne.textContent = getCityFromTimezone(guestLocalZone);
+  dateCityOne.textContent = moment().format("MMMM Do YYYY");
   timeCityOne.innerHTML = moment().format("h:mm:ss [<small>]a[</small>]");
 }
 
@@ -21,8 +21,8 @@ function updateSelectedCityTimezone() {
   const cityTwo = document.getElementById("city-two");
   const dateCityTwo = document.getElementById("date-city-two");
   const timeCityTwo = document.getElementById("time-city-two");
-  cityTwo.innerHTML = selectedCityTimezone + " tz";
-  dateCityTwo.innerHTML = moment()
+  cityTwo.textContent = getCityFromTimezone(selectedCityTimezone);
+  dateCityTwo.textContent = moment()
     .tz(selectedCityTimezone)
     .format("MMMM Do YYYY");
   timeCityTwo.innerHTML = moment()
@@ -35,7 +35,13 @@ function onSelectedCityChange(event) {
   updateSelectedCityTimezone();
 }
 
+function getCityFromTimezone(timezone) {
+  // Europe/London --> split('/') --> ['Europe', 'London']
+  return timezone.split("/")[1];
+}
+
 setInterval(updateTimezones, 1000);
+updateTimezones();
 
 const selectCity = document.getElementById("selectCity");
 selectCity.addEventListener("change", onSelectedCityChange);
