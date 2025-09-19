@@ -41,6 +41,15 @@ h2 {
 .date {
   opacity: 0.5;
   font-size: 14px;
+  margin-top: 20px;
+}
+
+.col-1 {
+  text-align: left;
+}
+
+.col-1 small {
+  font-style: italic;
 }
 
 .col-2 {
